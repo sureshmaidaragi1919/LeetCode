@@ -1,6 +1,13 @@
 package com.mobile.leetcode
 
-
+/*
+*
+*                A
+*             /     \
+*            B       C
+*          /  \     /  \
+*        D     E   F    G
+* */
 internal class TreeDs {
 
     internal class Node(var data: Any) {
@@ -25,17 +32,44 @@ internal class TreeDs {
             tree.root?.right?.right = Node("G")
 
 
+            println("PreOderTraversal")
             printPreOrder(tree.root!!)
+            println()
+            println("InOrderTraversal")
+            printInOrder(tree.root!!)
+            println()
+            println("PostOrderTraversal")
+            printPostOrder(tree.root!!)
+
         }
 
         private fun printPreOrder(node: Node?) {
 
             if (node == null) return
 
-            print("${node.data}")
+            print(" ${node.data}")
             printPreOrder(node.left)
+            printInOrder(node.right)
+
+        }
+
+        private fun printInOrder(node: Node?) {
+            if (node == null) return
+
+            printPreOrder(node.left)
+            print(" ${node.data}")
             printPreOrder(node.right)
 
         }
+
+        private fun printPostOrder(node: Node?) {
+            if (node == null) return
+            printPreOrder(node.left)
+            printPreOrder(node.right)
+            print(" ${node.data}")
+
+        }
+
+
     }
 }
