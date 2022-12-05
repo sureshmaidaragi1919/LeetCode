@@ -63,15 +63,15 @@ class ConvertLinkedListToBinaryTree {
                 return root
             }
 
-            var queue = ArrayDeque<TreeNode>()
-            root = TreeNode(head?.data)
+            val queue = ArrayDeque<TreeNode>()
+            root = TreeNode(head.data)
             queue.add(root)
 
-            head = head?.next
+            head = head.next
 
             while (head != null) {
 
-                var parent = queue.removeFirst()
+                val parent = queue.removeFirst()
                 var leftChild: TreeNode? = null
                 var rightChild: TreeNode? = null
 
