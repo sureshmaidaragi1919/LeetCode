@@ -3,6 +3,12 @@ package com.mobile.leetcode
 import java.util.*
 
 /*
+*                         A
+*                   B            C
+*               D     E                  F
+*                        G            H      I
+*                                                 J
+*
 *
 * */
 class TreeLevelOrderTraversal {
