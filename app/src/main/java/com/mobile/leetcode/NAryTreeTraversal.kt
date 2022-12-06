@@ -1,9 +1,24 @@
 package com.mobile.leetcode
 
+
+/*
+*
+*                           1
+*
+*                  2           3               4
+*
+*             22  23  24    32   33   34    42  43  44
+*
+*
+*
+*  0/P  = 1 2 22 23 24 3 32 33 34 4 42 43 44
+*
+*
+* */
 class NAryTreeTraversal {
 
     class NAryTreeNode(var data: Int) {
-        var childern: List<NAryTreeNode>? = null
+        var children: List<NAryTreeNode>? = null
     }
 
     companion object {
@@ -13,34 +28,34 @@ class NAryTreeTraversal {
 
             val node = NAryTreeNode(1)
             val child1 = NAryTreeNode(2)
-            child1.childern = listOf(NAryTreeNode(22), NAryTreeNode(23), NAryTreeNode(24))
+            child1.children = listOf(NAryTreeNode(22), NAryTreeNode(23), NAryTreeNode(24))
             val child2 = NAryTreeNode(3)
-            child2.childern = listOf(NAryTreeNode(32), NAryTreeNode(33), NAryTreeNode(34))
+            child2.children = listOf(NAryTreeNode(32), NAryTreeNode(33), NAryTreeNode(34))
             val child3 = NAryTreeNode(4)
-            child3.childern = listOf(NAryTreeNode(42), NAryTreeNode(43), NAryTreeNode(44))
-            node.childern = listOf(child1, child2, child3)
+            child3.children = listOf(NAryTreeNode(42), NAryTreeNode(43), NAryTreeNode(44))
+            node.children = listOf(child1, child2, child3)
 
 
             traverseNaryTree(node)
         }
 
 
-       private fun traverseNaryTree(root: NAryTreeNode?) {
+        private fun traverseNaryTree(root: NAryTreeNode?) {
 
             if (root == null) {
                 return
             }
 
-            println(root.data)
+            print("${root.data} ")
 
-            val size =   if (root.childern == null) {
+            val size = if (root.children == null) {
                 0
             } else {
-                root.childern!!.size
+                root.children!!.size
             }
 
             for (i in 0 until size) {
-                traverseNaryTree(root.childern?.get(i))
+                traverseNaryTree(root.children?.get(i))
             }
         }
     }
