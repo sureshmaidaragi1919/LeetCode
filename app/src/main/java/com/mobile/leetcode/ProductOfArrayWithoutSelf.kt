@@ -18,7 +18,7 @@ class ProductOfArrayWithoutSelf {
             // var output = productOfArrayOnDivision(arr)
 
             //  printArray(output)
-            productWithoutExtraSpace(arr)
+            productUsingExtraSpace(arr)
 
         }
 
@@ -112,38 +112,6 @@ class ProductOfArrayWithoutSelf {
             printArray(outPut)
 
         }
-/*        private fun productWithoutExtraSpace(arr: Array<Int>) {
-
-            var leftProduct = arrayOfNulls<Int>(arr.size)
-            var output = arrayOfNulls<Int>(arr.size)
-
-            for (i in arr.indices) {
-
-                if (i == 0) {
-                    leftProduct[i] = arr[i]
-                } else {
-                    leftProduct[i] = arr[i] * leftProduct[i - 1]!!
-                }
-
-            }
-
-            for (i in arr.size - 1 downTo 0) {
-
-                var product = 1
-                if (i == 0) {
-                    output[i] = product * leftProduct[i + 1]!!
-                } else if (i == arr.size - 1) {
-                    output[i] = leftProduct[i - 2]
-                    product = leftProduct[i - 1]!!
-                } else {
-                    product *= product * arr[i]
-                    output[i] = product * leftProduct[i - 1]!!
-                }
-
-            }
-
-            printArray(output)
-        }*/
 
         private fun printArray(arr: Array<Int?>) {
             for (element in arr) {
