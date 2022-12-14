@@ -12,7 +12,7 @@ fun main() {
 
     val input = "aaabcccdeeef"
     val output = 'b'
-    println(standardAlphabetCount(input))
+    println(indexOf(input))
 }
 
 //approach 1 double for loop
@@ -76,5 +76,14 @@ fun standardAlphabetCount(input: String): Char {
         if (charCount[character - 'a'] == 1) return character
     }
 
+    return '-'
+}
+
+
+//approach 4 using .indexOf and .lastIndex
+fun indexOf(input: String): Char {
+    for (character in input) {
+        if (input.indexOf(character) == input.lastIndexOf(character)) return character
+    }
     return '-'
 }
