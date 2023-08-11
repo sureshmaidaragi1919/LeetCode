@@ -69,7 +69,6 @@ internal class MirrorBinaryTree {
                 if (temp.rightNode != null) queue.offer(temp.rightNode)
             }
 
-
         }
     }
 

@@ -1,7 +1,5 @@
 package com.mobile.leetcode
 
-import java.util.*
-
 /*
 * Given the head of a singly linked list, reverse the list, and return the reversed list.
 
@@ -20,10 +18,10 @@ Output: []
 
 * */
 
-internal class LList {
+class LList {
 
 
-    internal class Node(var data: Int) {
+    class Node(var data: Int) {
         var next: Node? = null
     }
 

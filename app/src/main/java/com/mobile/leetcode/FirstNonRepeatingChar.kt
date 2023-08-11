@@ -10,7 +10,7 @@ package com.mobile.leetcode
 
 fun main() {
 
-    val input = "aaabcccdeeef"
+    val input = "aaabcccdeeefb"
     val output = 'b'
     println(indexOf(input))
 }
