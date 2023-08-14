@@ -8,9 +8,9 @@ package com.mobile.leetcode
 *          /  \     /  \
 *        D     E   F    G
 * */
-internal class TreeDs {
+class TreeDs {
 
-    internal class Node(var data: Any) {
+    class Node(var data: Any) {
         var left: Node? = null
         var right: Node? = null
     }
