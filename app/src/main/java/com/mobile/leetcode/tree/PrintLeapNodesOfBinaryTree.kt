@@ -21,38 +21,38 @@ class PrintLeapNodesOfBinaryTree {
         @JvmStatic
         fun main(array: Array<String>) {
 
-            val root = TreeLevelOrderTraversal.TreeNode("A")
-            root.leftNode = TreeLevelOrderTraversal.TreeNode("B")
-            root.rightNode = TreeLevelOrderTraversal.TreeNode("C")
+            val root = Node("A")
+            root.left = Node("B")
+            root.right = Node("C")
 
-            root.leftNode?.leftNode = TreeLevelOrderTraversal.TreeNode("d")
-            root.leftNode?.rightNode = TreeLevelOrderTraversal.TreeNode("E")
-            root.leftNode?.rightNode?.leftNode = TreeLevelOrderTraversal.TreeNode("g")
+            root.left?.left = Node("d")
+            root.left?.right = Node("E")
+            root.left?.right?.left = Node("g")
 
-            root.rightNode?.rightNode = TreeLevelOrderTraversal.TreeNode("F")
-            root.rightNode?.rightNode?.rightNode = TreeLevelOrderTraversal.TreeNode("I")
-            root.rightNode?.rightNode?.leftNode = TreeLevelOrderTraversal.TreeNode("h")
-            root.rightNode?.rightNode?.rightNode?.leftNode = TreeLevelOrderTraversal.TreeNode("j")
+            root.right?.right = Node("F")
+            root.right?.right?.right = Node("I")
+            root.right?.right?.left = Node("h")
+            root.right?.right?.right?.left = Node("j")
             levelOrderTraverse(root)
 
         }
 
 
-        private fun levelOrderTraverse(root: TreeLevelOrderTraversal.TreeNode) {
-            val queue: Queue<TreeLevelOrderTraversal.TreeNode?> =
-                LinkedList<TreeLevelOrderTraversal.TreeNode?>()
-            var tempNode: TreeLevelOrderTraversal.TreeNode?
+        private fun levelOrderTraverse(root: Node) {
+            val queue: Queue<Node?> =
+                LinkedList<Node?>()
+            var tempNode: Node?
             queue.offer(root)
 
             while (queue.isNotEmpty()) {
                 tempNode = queue.poll()
 
-                if (tempNode != null && tempNode.leftNode == null && tempNode.rightNode == null) {
+                if (tempNode != null && tempNode.left == null && tempNode.right == null) {
                     print(tempNode.data)
 
                 } else {
-                    queue.add(tempNode?.leftNode)
-                    queue.add(tempNode?.rightNode)
+                    queue.add(tempNode?.left)
+                    queue.add(tempNode?.right)
                 }
 
 

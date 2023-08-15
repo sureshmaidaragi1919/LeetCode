@@ -14,22 +14,22 @@ fun main() {
     *
     * */
 
-    val root = TreeDs.Node(1)
-    root.left = TreeDs.Node(2)
-    root.right = TreeDs.Node(3)
+    val root =  Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
 
-    root.right!!.left = TreeDs.Node(4)
-    root.right!!.left!!.left = TreeDs.Node(8)
-    root.right!!.right = TreeDs.Node(5)
-    root.right!!.right!!.left = TreeDs.Node(6)
-    root.right!!.right!!.right = TreeDs.Node(7)
+    root.right!!.left = Node(4)
+    root.right!!.left!!.left = Node(8)
+    root.right!!.right = Node(5)
+    root.right!!.right!!.left = Node(6)
+    root.right!!.right!!.right = Node(7)
 
 
 
-    println("Found ${findLowestCommonAncestor(root, TreeDs.Node(7), TreeDs.Node(8))!!.data}")
+    println("Found ${findLowestCommonAncestor(root, Node(7), Node(8))!!.data}")
 }
 
-fun findLowestCommonAncestor(root: TreeDs.Node?, p: TreeDs.Node, q: TreeDs.Node): TreeDs.Node? {
+fun findLowestCommonAncestor(root: Node?, p: Node, q: Node): Node? {
 
     if (root == null || root.data == p.data || root.data == q.data) {
         return root

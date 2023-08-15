@@ -8,12 +8,12 @@ package com.mobile.leetcode.tree
 *          /  \     /  \
 *        D     E   F    G
 * */
-class TreeDs {
 
-    class Node(var data: Any) {
-        var left: Node? = null
-        var right: Node? = null
-    }
+class Node(var data: Any) {
+    var left: Node? = null
+    var right: Node? = null
+}
+class TreeDs {
 
     var root: Node? = null
 

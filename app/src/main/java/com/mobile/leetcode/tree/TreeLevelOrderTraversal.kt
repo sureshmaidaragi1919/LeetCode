@@ -1,6 +1,7 @@
 package com.mobile.leetcode.tree
 
-import java.util.*
+import java.util.LinkedList
+import java.util.Queue
 
 /*
 *                         A
@@ -13,44 +14,38 @@ import java.util.*
 * */
 class TreeLevelOrderTraversal {
 
-    class TreeNode(var data: String) {
-        var leftNode: TreeNode? = null
-        var rightNode: TreeNode? = null
-    }
-
-
     companion object {
 
         @JvmStatic
         fun main(array: Array<String>) {
 
-            val root = TreeNode("A")
-            root.leftNode = TreeNode("B")
-            root.rightNode = TreeNode("C")
+            val root = Node("A")
+            root.left = Node("B")
+            root.right = Node("C")
 
-            root.leftNode?.leftNode = TreeNode("D")
-            root.leftNode?.rightNode = TreeNode("E")
-            root.leftNode?.rightNode?.leftNode = TreeNode("G")
+            root.left?.left = Node("D")
+            root.left?.right = Node("E")
+            root.left?.right?.left = Node("G")
 
-            root.rightNode?.rightNode = TreeNode("F")
-            root.rightNode?.rightNode?.rightNode = TreeNode("I")
-            root.rightNode?.rightNode?.leftNode = TreeNode("H")
-            root.rightNode?.rightNode?.rightNode?.leftNode = TreeNode("J")
+            root.right?.right = Node("F")
+            root.right?.right?.right = Node("I")
+            root.right?.right?.left = Node("H")
+            root.right?.right?.right?.left = Node("J")
             levelOrderTraverse(root)
 
         }
 
 
-        private fun levelOrderTraverse(root: TreeNode) {
-            val queue: Queue<TreeNode?> = LinkedList<TreeNode?>()
-            var tempNode: TreeNode?
+        private fun levelOrderTraverse(root: Node) {
+            val queue: Queue<Node?> = LinkedList<Node?>()
+            var tempNode: Node?
             queue.offer(root)
 
             while (queue.isNotEmpty()) {
                 tempNode = queue.poll()
                 print(tempNode?.data)
-                if (tempNode?.leftNode != null) queue.add(tempNode.leftNode)
-                if (tempNode?.rightNode != null) queue.add(tempNode.rightNode)
+                if (tempNode?.left != null) queue.add(tempNode.left)
+                if (tempNode?.right != null) queue.add(tempNode.right)
 
             }
 
