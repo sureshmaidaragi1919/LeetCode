@@ -1,9 +1,0 @@
-com.mobile.leetcode.test.app-jetified-annotation-experimental-1.3.0-0 /Users/suresh/.gradle/caches/transforms-3/b45ef1e186185ce7014be7aa03f03ad4/transformed/jetified-annotation-experimental-1.3.0/res
-com.mobile.leetcode.test.app-jetified-core-1.5.0-1 /Users/suresh/.gradle/caches/transforms-3/f4f1edba3cc241bd04d05434f8a68b70/transformed/jetified-core-1.5.0/res
-com.mobile.leetcode.test.app-androidTest-2 /Users/suresh/AndroidStudioProjects/LeetCode/app/build/generated/res/resValues/androidTest/debug
-com.mobile.leetcode.test.app-androidTest-3 /Users/suresh/AndroidStudioProjects/LeetCode/app/build/generated/res/rs/androidTest/debug
-com.mobile.leetcode.test.app-mergeDebugAndroidTestResources-4 /Users/suresh/AndroidStudioProjects/LeetCode/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.mobile.leetcode.test.app-mergeDebugAndroidTestResources-5 /Users/suresh/AndroidStudioProjects/LeetCode/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.mobile.leetcode.test.app-merged_res-6 /Users/suresh/AndroidStudioProjects/LeetCode/app/build/intermediates/merged_res/debugAndroidTest
-com.mobile.leetcode.test.app-androidTest-7 /Users/suresh/AndroidStudioProjects/LeetCode/app/src/androidTest/res
-com.mobile.leetcode.test.app-androidTestDebug-8 /Users/suresh/AndroidStudioProjects/LeetCode/app/src/androidTestDebug/res
