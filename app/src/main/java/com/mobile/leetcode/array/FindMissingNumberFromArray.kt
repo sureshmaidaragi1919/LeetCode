@@ -1,4 +1,4 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.array
 
 fun findMissingNumbers(arr: IntArray, count: Int): Int {
     var total: Int = (count + 1) * (count + 2) / 2

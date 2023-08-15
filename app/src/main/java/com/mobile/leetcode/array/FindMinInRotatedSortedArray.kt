@@ -1,6 +1,6 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.array
 
-import java.util.*
+import java.util.Stack
 
 
 fun main(){

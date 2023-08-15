@@ -1,7 +1,4 @@
-package com.mobile.leetcode
-
-import java.util.Deque
-import java.util.Queue
+package com.mobile.leetcode.tree
 
 /*
 * LinkedList  1 2 3 4 5 6

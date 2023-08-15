@@ -1,4 +1,4 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.tree
 
 
 fun main() {

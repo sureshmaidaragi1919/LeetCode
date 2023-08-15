@@ -1,4 +1,4 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.array
 fun main(){
     findLowestHighestIndex(intArrayOf(2,3,4,4,4,51,53),4)
 }

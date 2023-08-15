@@ -1,4 +1,4 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.array
 /*
 
 Consider an infinite full binary tree (each node has two children except the leaf nodes) defined as follows.

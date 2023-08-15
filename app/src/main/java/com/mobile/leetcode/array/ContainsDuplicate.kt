@@ -1,4 +1,4 @@
-package com.mobile.leetcode
+package com.mobile.leetcode.array
 
 /*
 * Given an integer array nums, return true if any value appears at

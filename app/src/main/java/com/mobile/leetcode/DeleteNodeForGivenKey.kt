@@ -1,5 +1,7 @@
 package com.mobile.leetcode
 
+import com.mobile.leetcode.linkedlist.LList
+
 class DeleteNodeForGivenKey {
 
     companion object {
