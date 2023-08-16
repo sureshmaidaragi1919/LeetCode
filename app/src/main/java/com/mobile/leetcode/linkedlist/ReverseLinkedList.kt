@@ -22,6 +22,7 @@ class LList {
 
 
     class Node(var data: Int) {
+        var prev: Node? = null
         var next: Node? = null
     }
 

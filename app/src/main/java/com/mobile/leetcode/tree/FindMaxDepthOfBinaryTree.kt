@@ -13,7 +13,6 @@ package com.mobile.leetcode.tree
 *
 * O/P = 4
 *
-* when you are not happy with what you have, if simple pain/pressure comes on you.. you'll started feeling big pain on your ass
 * */
 private fun main() {
 
