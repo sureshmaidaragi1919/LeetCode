@@ -33,7 +33,7 @@ private fun main() {
 
 }
 
-fun findMaxDepth(root: Node?): Int {
+private fun findMaxDepth(root: Node?): Int {
 
     if (root == null) return 0
 
