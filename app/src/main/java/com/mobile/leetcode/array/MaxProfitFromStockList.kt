@@ -12,5 +12,5 @@ fun main() {
         minimumPrice = Math.min(minimumPrice, stocks[i])  //80
     }
 
-    println("fucked $maxProfit")
+    println("Max profit is $maxProfit")
 }

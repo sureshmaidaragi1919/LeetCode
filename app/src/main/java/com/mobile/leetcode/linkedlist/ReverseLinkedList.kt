@@ -26,34 +26,6 @@ class LList {
         var next: Node? = null
     }
 
-    fun reverseLList(head: Node?): Node? {
-        var node: Node? = head
-
-        var prev: Node? = null
-        var next: Node? = null
-        var current: Node? = head
-
-        while (current != null) {
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
-        }
-
-        node = prev
-        return node
-
-    }
-
-    fun printList(root: Node?) {
-
-        var node = root
-        while (node != null) {
-            print("${node.data}  ")
-            node = node.next
-        }
-    }
-
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
@@ -76,6 +48,32 @@ class LList {
         }
     }
 
+
+
+    fun reverseLList(head: Node?): Node? {
+
+        var prev: Node? = null
+        var current: Node? = head
+
+        while (current != null) {
+            val next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        }
+
+        return prev
+
+    }
+
+    fun printList(root: Node?) {
+
+        var node = root
+        while (node != null) {
+            print("${node.data}  ")
+            node = node.next
+        }
+    }
 
 }
 

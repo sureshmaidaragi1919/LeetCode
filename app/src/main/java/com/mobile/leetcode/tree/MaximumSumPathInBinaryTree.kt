@@ -1,5 +1,13 @@
 package com.mobile.leetcode.tree
 
+/*
+*               -10
+*              /    \
+*            9       20
+*                   /   \
+*                 15     7
+*
+* */
 
 private fun main() {
 
