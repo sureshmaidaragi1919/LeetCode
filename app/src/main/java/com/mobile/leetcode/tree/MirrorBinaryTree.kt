@@ -1,6 +1,7 @@
 package com.mobile.leetcode.tree
 
-import java.util.*
+import java.util.LinkedList
+import java.util.Queue
 
 
 /*        Left Mirror                    Original                        Right Mirror
@@ -35,7 +36,7 @@ internal class MirrorBinaryTree {
             tree.rightNode?.leftNode = TreeNode(6)
             tree.rightNode?.rightNode = TreeNode(7)
 
-         mirrorTree(tree)
+        // mirrorTree(tree)
 
             levelOrderTraversalTree(tree)
         }
