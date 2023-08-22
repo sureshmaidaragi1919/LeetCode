@@ -12,12 +12,13 @@ import java.util.TreeMap
 
 
 fun main() {
-    val a = intArrayOf(1, 3, 5, 7)
-    val b = intArrayOf(2, 44, 6, 8, 9)
+    val a = intArrayOf(1, 3, 5, 7,53)
+    val b = intArrayOf(2, 4, 6, 8, 9, 55)
 
     //mergeArrays(a, b)
     // mergeTowArrays(a, b)
-    mergeTwoArraysWithPriorityQueue(a, b)
+    //  mergeTwoArraysWithPriorityQueue(a, b)
+    mergeWithoutAnyInbuilt(a, b)
 }
 
 //Using TreeMap which internally sorts the items
@@ -38,28 +39,6 @@ fun mergeArrays(a: IntArray, b: IntArray) {
 }
 
 
-//when both array's of same size time we achieve time complexity o(m) or o(n)
-fun mergeTowArrays(a: IntArray, b: IntArray) {
-
-    var output = IntArray(a.size + b.size)
-    var index = 0
-    for (i in a.indices) {
-        if (a[i] <= b[i]) {
-            output[index] = a[i]
-            index++
-            output[index] = b[i]
-            index++
-        } else {
-            output[index] = b[i]
-            index++
-            output[index] = a[i]
-            index++
-
-        }
-    }
-    println(output.toList())
-}
-
 /*Using priority queue
 *
 * Time Complexity: O((N+M)*log(N+M))
@@ -78,5 +57,24 @@ private fun mergeTwoArraysWithPriorityQueue(a: IntArray, b: IntArray) {
         print(" ${queue.poll()} ")
     }
 
+}
 
+private fun mergeWithoutAnyInbuilt(a: IntArray, b: IntArray) {
+    var output = mutableListOf<Int>()
+    for (i in a.indices) {
+        output.add(i, a[i])
+    }
+    var count = output.size
+    for (zeros in b.indices) {
+        output.add(count++, 0)
+    }
+
+    var i = a.size - 1
+    var j = b.size - 1
+    var k = a.size + b.size - 1
+    while (j >= 0) {
+        output.set(index = k--, element = if (i < 0 || a[i] <= b[j]) b[j--] else a[i--])
+    }
+
+    println("Merged list is ${output}")
 }
