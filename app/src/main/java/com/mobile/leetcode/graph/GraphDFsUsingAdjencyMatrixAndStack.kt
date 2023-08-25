@@ -91,7 +91,6 @@ fun main() {
     graph.addEdge(1, 3)
     graph.addEdge(4, 5)
 
-    println("Visits : ")
     graph.dfs()
     println("........")
 
