@@ -14,9 +14,9 @@ import java.util.Queue
 *
 * */
 
-internal class MirrorBinaryTree {
+class MirrorBinaryTree {
 
-    internal class TreeNode(var data: Int) {
+    class TreeNode(var data: Int) {
         var leftNode: TreeNode? = null
         var rightNode: TreeNode? = null
     }
