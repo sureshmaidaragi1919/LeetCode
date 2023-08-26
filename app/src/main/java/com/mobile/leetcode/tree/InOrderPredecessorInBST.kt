@@ -1,6 +1,34 @@
 package com.mobile.leetcode.tree
 
 
+/*
+*
+*
+*                   Binary Search Tree
+*
+*                       5
+*               3               7
+*          2        4       6       9
+
+*       1                         8     10
+*
+*
+* Input ^
+*
+* Target: 1
+* Output : -1 Is InOrderPredecessor
+*
+*
+* Target : 4
+* Output : 3Is InOrderPredecessor
+*
+*
+*
+*
+* */
+
+
+
 fun main() {
 
     val root = MirrorBinaryTree.TreeNode(5)
@@ -15,29 +43,29 @@ fun main() {
     root.rightNode?.rightNode?.leftNode = MirrorBinaryTree.TreeNode(8)
     root.rightNode?.rightNode?.rightNode = MirrorBinaryTree.TreeNode(10)
 
-    findInOrderPredecessor(root, MirrorBinaryTree.TreeNode(1))
+    inOrderPredecessor(root, MirrorBinaryTree.TreeNode(8))
 }
 
-fun findInOrderPredecessor(root: MirrorBinaryTree.TreeNode, target: MirrorBinaryTree.TreeNode) {
-    if (root == null) return
-    if (root == target) {
-        println(target.data)
+
+fun inOrderPredecessor(root: MirrorBinaryTree.TreeNode, target: MirrorBinaryTree.TreeNode) {
+
+    if (root == null) {
+        println("invalid case ")
         return
     }
+
     var temp: MirrorBinaryTree.TreeNode? = root
     var success = -1
 
     while (temp != null) {
-
-        if (target.data >= temp.data) {
+        if (target.data > temp.data) {
+            success = temp.data ?: -1
             temp = temp.rightNode
         } else {
-            success = temp.data
             temp = temp.leftNode
-
         }
-
     }
 
     println(success)
+
 }
