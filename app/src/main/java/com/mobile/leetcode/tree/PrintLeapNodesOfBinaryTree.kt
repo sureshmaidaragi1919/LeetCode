@@ -34,6 +34,8 @@ class PrintLeapNodesOfBinaryTree {
             root.right?.right?.left = Node("h")
             root.right?.right?.right?.left = Node("j")
             levelOrderTraverse(root)
+            println("______")
+            printLeap(root)
 
         }
 
@@ -55,9 +57,19 @@ class PrintLeapNodesOfBinaryTree {
                     queue.add(tempNode?.right)
                 }
 
-
             }
 
         }
+
+        private fun printLeap(root: Node?) {
+            if (root == null) return
+            if (root.left == null && root.right == null) {
+                print(root.data)
+            }
+            printLeap(root.left)
+            printLeap(root.right)
+        }
     }
+
+
 }

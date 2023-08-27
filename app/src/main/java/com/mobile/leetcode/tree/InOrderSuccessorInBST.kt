@@ -40,6 +40,8 @@ private fun main() {
     root.rightNode?.rightNode?.rightNode = MirrorBinaryTree.TreeNode(10)
 
     findInOrderPredecessor(root, MirrorBinaryTree.TreeNode(2))
+    pot(root, 2)
+    println("Using recursion $minv")
 }
 
 private fun findInOrderPredecessor(
@@ -66,5 +68,20 @@ private fun findInOrderPredecessor(
 
     }
 
-    println(success)
+    println("Using while loop $success")
+}
+
+
+private var minv = Int.MAX_VALUE
+private fun pot(root: MirrorBinaryTree.TreeNode?, key: Int) {
+
+    if (root == null) return
+
+    if (root.data > key) {
+        minv = root.data.coerceAtMost(minv)
+    }
+
+    pot(root.leftNode, key)
+    pot(root.rightNode, key)
+
 }
