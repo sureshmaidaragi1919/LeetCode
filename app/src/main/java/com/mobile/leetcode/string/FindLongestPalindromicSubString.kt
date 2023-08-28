@@ -11,20 +11,36 @@ Output: “ee”*/
 
 
 private fun main() {
-
     val input = "forgeeksskeegfor"
 
-    var startPointer = 0
-    var endPointer = 1
+    usingBruteForceApproach(input)
+
+}
+
+/*TC : o(n3)*/
+/*SC : o(n)*/
+private fun usingBruteForceApproach(input: String) {
     val list = mutableListOf<String>()
 
     for (i in input.indices) {
 
         for (j in i until input.length) {
-
-            list.add(input.substring(i, j))
-
+            var formatted = input.substring(i, j)
+            if (isPalindrome(formatted)) {
+                list.add(formatted)
+            }
         }
     }
+
+    println("__________________")
+    var max = Int.MIN_VALUE
+    var result = ""
+    for (i in list.indices) {
+        if (list[i].length >= max) {
+            result = list[i]
+            max = list[i].length
+        }
+    }
+    println("Longest palindrome is $result")
 
 }
