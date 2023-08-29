@@ -11,12 +11,11 @@ package com.mobile.leetcode.tree
  *               \        \
  *                8        9
  *
- *                o/p = 1 2 4 8
+ *                o/p = 1 3 7 9
  *
  * */
 
 private fun main() {
-
     val root = MirrorBinaryTree.TreeNode(1)
     root.leftNode = MirrorBinaryTree.TreeNode(2)
     root.rightNode = MirrorBinaryTree.TreeNode(3)
@@ -28,25 +27,26 @@ private fun main() {
     root.leftNode?.rightNode = MirrorBinaryTree.TreeNode(5)
     root.leftNode?.rightNode?.rightNode = MirrorBinaryTree.TreeNode(8)
 
-    leftViewOfTree(root, 0)
+    rightViewOfTree(root, 0)
 
     printResult()
 }
 
-private var dataList = mutableListOf<MirrorBinaryTree.TreeNode>()
-private fun leftViewOfTree(root: MirrorBinaryTree.TreeNode?, level: Int) {
+private var resultList = mutableListOf<MirrorBinaryTree.TreeNode>()
+private fun rightViewOfTree(root: MirrorBinaryTree.TreeNode?, level: Int) {
+
     if (root == null) return
 
-    if (level == dataList.size) {
-        dataList.add(root)
+    if (level == resultList.size) {
+        resultList.add(root)
     }
+    rightViewOfTree(root.rightNode, level + 1)
+    rightViewOfTree(root.leftNode, level + 1)
 
-    leftViewOfTree(root.leftNode, level + 1)
-    leftViewOfTree(root.rightNode, level + 1)
 }
 
 private fun printResult() {
-    for (i in dataList.indices) {
-        println(dataList.get(i).data)
+    for (i in resultList.indices) {
+        println(resultList.get(i).data)
     }
 }
