@@ -13,7 +13,9 @@ Output: “ee”*/
 private fun main() {
     val input = "forgeeksskeegfor"
 
-    usingBruteForceApproach(input)
+    // usingBruteForceApproach(input)
+
+    naiveApproach()
 
 }
 
@@ -25,7 +27,7 @@ private fun usingBruteForceApproach(input: String) {
     for (i in input.indices) {
 
         for (j in i until input.length) {
-            var formatted = input.substring(i, j)
+            val formatted = input.substring(i, j)
             if (isPalindrome(formatted)) {
                 list.add(formatted)
             }
@@ -43,4 +45,33 @@ private fun usingBruteForceApproach(input: String) {
     }
     println("Longest palindrome is $result")
 
+}
+
+
+/*Using o(n2)*/
+
+
+fun naiveApproach() {
+    var s = "aaa"
+    var start = 0
+    var end = 0
+
+    fun check(q: Int, p: Int) {
+        var i = q
+        var j = p
+        while (i >= 0 && j < s.length && s[i] == s[j]) {
+            i--
+            j++
+        }
+        if (j - i > end - start) {
+            end = j
+            start = i + 1
+        }
+    }
+
+    for (i in s.indices) {
+        if (i != 0) check(i - 1, i)
+        check(i, i)
+    }
+    println("Result ${s.substring(start, end)}")
 }
