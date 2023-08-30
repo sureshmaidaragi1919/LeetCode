@@ -48,7 +48,7 @@ Explanation: Buildings cannot see the ocean if there are buildings of the same h
 
 private fun main() {
 
-    val arr = arrayOf(0,8,1,7)
+    val arr = arrayOf(0, 8, 1, 7)
     var max = Int.MIN_VALUE
     for (i in arr.size - 1 downTo 0) {
 

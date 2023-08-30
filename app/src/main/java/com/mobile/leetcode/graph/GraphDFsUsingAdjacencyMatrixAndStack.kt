@@ -25,7 +25,7 @@ private class Graph {
     private var stack = Stack<Int>()
 
 
-    fun addVertex(label: Char) {
+    fun addVertex(label: Any) {
         vertexList[nVertex++] = Vertex(label)
     }
 
@@ -70,7 +70,7 @@ private class Graph {
 
 }
 
-class Vertex(var label: Char) {
+class Vertex(var label: Any) {
     var wasVisited = false
 }
 
