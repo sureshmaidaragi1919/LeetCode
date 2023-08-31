@@ -10,9 +10,9 @@ package com.mobile.leetcode.string
 
 fun main() {
 
-    val input = "aaabcccdeeefb"
+    val input = "abacabaabacaba"
     val output = 'b'
-    println(indexOf(input))
+    println(usingHashMap(input))
 }
 
 //approach 1 double for loop
@@ -38,10 +38,11 @@ fun nSquareTime(input: String): Char {
 
 //approach 2 using hashmap
 fun usingHashMap(input: String): Char {
+    if(input.length==1) return input.get(0)
 
     val map = hashMapOf<Char, Int>()
 
-    for (i in 0 until input.length - 1) {
+    for (i in input.indices) {
 
         if (map.containsKey(input[i])) {
             map[input[i]] = map[input[i]]!! + 1
@@ -53,18 +54,19 @@ fun usingHashMap(input: String): Char {
 
     //order of hashmap is not maintained so we iterate throw list again to find which key has 1
 
-    for (i in 0 until input.length - 1) {
+    for (i in input.indices) {
 
         if (map[input[i]] == 1) {
             return input[i]
         }
     }
 
-    return '-'
+    return '_'
 }
 
 //approach 3 standardAlphabetCount
 fun standardAlphabetCount(input: String): Char {
+
 
     val charCount = IntArray(26)
 
