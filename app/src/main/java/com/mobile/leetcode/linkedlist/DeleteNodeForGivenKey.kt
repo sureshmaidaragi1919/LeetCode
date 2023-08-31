@@ -12,8 +12,7 @@ class DeleteNodeForGivenKey {
             root.next?.next = LList.Node(3)
             root.next?.next?.next = LList.Node(4)
             root.next?.next?.next?.next = LList.Node(2)
-            //deleteKeyThNode(root, 2)
-            println("includes other corner cases tooo")
+            println("includes other corner cases too")
             displayLL(solution(root, 1))
         }
 
@@ -25,25 +24,6 @@ class DeleteNodeForGivenKey {
             }
         }
 
-
-        fun deleteKeyThNode(node: LList.Node, key: Int) {
-
-            var temp: LList.Node? = node
-
-            while (temp != null) {
-                if (temp.next?.data == key) {
-                    temp.next = temp.next?.next
-                } else {
-                    temp = temp.next
-                }
-            }
-
-            var tempv: LList.Node? = node
-            while (tempv != null) {
-                println(tempv.data)
-                tempv = tempv.next
-            }
-        }
 
         /*It includes other corner cases too*/
         fun solution(l: LList.Node?, k: Int): LList.Node? {
