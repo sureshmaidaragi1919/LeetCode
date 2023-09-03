@@ -74,3 +74,31 @@ private fun maxTimeRequiredToPaintAllFence(input: MutableList<MutableList<Int>>,
 
 }
 
+
+
+
+/*Using 2D matrix*/
+private fun minPaintTime(times: MutableList<MutableList<Int>>): Int {
+    val n = times.size
+
+    // Initialize a 2D DP array where dp[i][j] represents the minimum time to paint the first i fences with the i-th fence painted with color j.
+    val dp = Array(n) { IntArray(3) }
+
+
+    // Initialize the first row of dp with the times for the first fence.
+    dp[0] = times[0].toIntArray()
+
+    // Iterate through the fences starting from the second one.
+    for (i in 1 until n) {
+        for (j in 0 until 3) {
+            // Calculate the minimum time to paint the i-th fence with color j by considering the previous fence.
+            dp[i][j] = times[i][j] + minOf(dp[i - 1][(j + 1) % 3], dp[i - 1][(j + 2) % 3])
+        }
+    }
+
+    // The minimum time to paint all the fences will be the minimum time in the last row of dp.
+    val minTime = dp[n - 1].minOrNull() ?: 0
+
+    return minTime
+}
+
