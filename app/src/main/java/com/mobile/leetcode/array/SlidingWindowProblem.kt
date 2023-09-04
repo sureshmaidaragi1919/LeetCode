@@ -12,28 +12,29 @@ Output : 39
 
 private fun main() {
 
-    val input_array = arrayOf(1, 4, 2, 10)
-    val k = 5
+    val input_array = arrayOf(100, 200, 300, 400)
+    val k = 2
 
-    val result = findMaxSum(input_array, k)
+    val result = findMax(input_array, k)
     println("Result is $result")
 }
 
 
-
 /*
 * Using brute force apprach
-* TC ': O(n)+O(k)
-* SC : O(1)
+* TC ': O(n*k)
+* Auxiliary Space : O(1)
 * */
 private fun findMaxSum(inputArray: Array<Int>, k: Int): Int {
     var maxSum = 0
 
+    //Corner case
     if (k > inputArray.size) {
         return -1
     }
     var k = k - 1 //because index start with zero
 
+    //Corner case
     if (k == inputArray.size) {
         for (i in inputArray.indices) {
             maxSum += inputArray[i]
@@ -41,6 +42,7 @@ private fun findMaxSum(inputArray: Array<Int>, k: Int): Int {
         return maxSum
     }
 
+    //Best case
     for (i in inputArray.indices) {
 
         if (i + k < inputArray.size) {
@@ -64,3 +66,30 @@ private fun calculateSum(inputArray: Array<Int>, start: Int, end: Int): Int {
 
 }
 
+
+/*
+Using fist window and reducing i-1 and adding k+1
+TC : O(n)
+Auxiliary Space : O(1)
+* */
+
+private fun findMax(inputArray: Array<Int>, k: Int): Int {
+
+    if (k >= inputArray.size) {
+        return -1
+    }
+
+    var maxSum = 0
+
+    for (i in 0..<k) {
+        maxSum += inputArray[i]
+    }
+
+    var currentSum = maxSum
+    for (i in k..<inputArray.size) {
+        currentSum += inputArray[i] - inputArray[i - k]
+        maxSum = Math.max(currentSum, maxSum)
+    }
+
+    return maxSum
+}
