@@ -1,4 +1,4 @@
-# LeetCode
+# LeetCode problems with solution in Kitlin
 
 1. This project contains DSA problems and solutions completely on Kotlin.
 2. IDE used Android Studio.
