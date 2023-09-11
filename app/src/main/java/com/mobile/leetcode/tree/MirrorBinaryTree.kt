@@ -36,9 +36,9 @@ class MirrorBinaryTree {
             tree.rightNode?.leftNode = TreeNode(6)
             tree.rightNode?.rightNode = TreeNode(7)
 
-        // mirrorTree(tree)
+            mirrorTree(tree) // this is to mirror the nodes
 
-            levelOrderTraversalTree(tree)
+            levelOrderTraversalTree(tree) //this is to print result
         }
 
 
@@ -46,7 +46,6 @@ class MirrorBinaryTree {
             if (root == null) return
             else {
                 var temp: TreeNode? = null
-                mirrorTree(root.leftNode)
                 mirrorTree(root.rightNode)
 
                 temp = root.leftNode

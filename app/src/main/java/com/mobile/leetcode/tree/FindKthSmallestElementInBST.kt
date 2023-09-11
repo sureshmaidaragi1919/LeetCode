@@ -67,12 +67,27 @@ private fun kthSmallestElementInTree(root: MirrorBinaryTree.TreeNode?, k: Int) {
 
     if (root == null) return
 
-    kthSmallestElementInTree(root.leftNode,k)
+    kthSmallestElementInTree(root.leftNode, k)
     if (countV1 < k) {
         countV1++
         result = root.data
     }
-    kthSmallestElementInTree(root.rightNode,k)
+    kthSmallestElementInTree(root.rightNode, k)
+
+}
+
+/*Without using external variables*/
+
+private var k = 1
+private fun kthSmallest(root: MirrorBinaryTree.TreeNode?) {
+    if (root == null) return
+    kthSmallest(root.leftNode)
+    if (k == 0) {
+        k--
+        result = root.data ?: -1
+    }
+    kthSmallest(root.rightNode)
+    k--
 
 }
 
