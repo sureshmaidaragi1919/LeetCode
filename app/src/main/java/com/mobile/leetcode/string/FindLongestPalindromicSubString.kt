@@ -11,11 +11,11 @@ Output: “ee”*/
 
 
 private fun main() {
-    val input = "forgeeksskeegfor"
+    val input = "ababa"
 
     // usingBruteForceApproach(input)
 
-    naiveApproach()
+    bestApproach(input)
 
 }
 
@@ -51,8 +51,7 @@ private fun usingBruteForceApproach(input: String) {
 /*Using o(n2)*/
 
 
-fun naiveApproach() {
-    var s = "aaa"
+private fun bestApproach(s:String) {
     var start = 0
     var end = 0
 
