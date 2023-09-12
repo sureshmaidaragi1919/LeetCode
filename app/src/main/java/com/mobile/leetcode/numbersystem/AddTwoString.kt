@@ -1,4 +1,4 @@
-package com.mobile.leetcode.binary
+package com.mobile.leetcode.numbersystem
 
 /*
 * Given two binary strings a and b return their sum as a binary string. s
