@@ -25,9 +25,7 @@ fun main() {
     root.left?.right?.right = Node(7)
     root.left?.right?.left = Node(6)
 
-
-
-    println("Found ${findLowestCommonAncestor(root, Node(1), Node(1))?.data}")
+    println("Found ${findLowestCommonAncestor(root, Node(4), Node(7))?.data}")
 }
 
 fun findLowestCommonAncestor(root: Node?, p: Node, q: Node): Node? {
