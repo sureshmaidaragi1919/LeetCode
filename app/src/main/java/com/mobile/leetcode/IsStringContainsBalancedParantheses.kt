@@ -21,7 +21,7 @@ there is a closing ‘]’ before the closing ‘(‘
 private fun main() {
     val input = "[()]{}{[()()]()}"
 
-    isValidString(input)
+    isValid(input)
 }
 
 fun isValidString(input: String) {
@@ -67,4 +67,20 @@ fun isValidString(input: String) {
     }
 
     println(stack.isEmpty())
+}
+
+fun isValid(s: String): Boolean {
+    val stack = Stack<Char>()
+    for (x in s.toCharArray()) {
+        if (x == '(') {
+            stack.push(')')
+        } else if (x == '{') {
+            stack.push('}')
+        } else if (x == '[') {
+            stack.push(']')
+        } else if (stack.isEmpty() || stack.pop() != x) {
+            return false
+        }
+    }
+    return stack.isEmpty()
 }
