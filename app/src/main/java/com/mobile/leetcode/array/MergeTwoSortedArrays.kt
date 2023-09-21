@@ -12,8 +12,9 @@ import java.util.TreeMap
 
 
 fun main() {
-    val a = intArrayOf(1, 3, 5, 7,53)
+    val a = intArrayOf(1)
     val b = intArrayOf(2, 4, 6, 8, 9, 55)
+
 
     //mergeArrays(a, b)
     // mergeTowArrays(a, b)
@@ -77,4 +78,36 @@ private fun mergeWithoutAnyInbuilt(a: IntArray, b: IntArray) {
     }
 
     println("Merged list is ${output}")
+}
+
+
+private fun mergBhai(a: IntArray, b: IntArray) {
+
+    var output = IntArray(a.size + b.size )
+
+    var i = 0
+    var j = 0
+
+    var index = 0
+    while (i < a.size && j < b.size) {
+
+        if (a[i] > b[j]) {
+            output[index++] = b[j]
+            output[index++] = a[i]
+        } else {
+            output[index++] = a[j]
+            output[index++] = b[i]
+        }
+        i++
+        j++
+    }
+
+    for (m in i until a.size) {
+        output[index++]
+    }
+
+    for (m in j until b.size) {
+        output[index++]
+    }
+    println("merged list bhai ${output.toList()}")
 }
