@@ -39,4 +39,22 @@ private fun main() {
     }
 
     println("result is  = ${firstString.subSequence(0, index)}")
+
+    usingBestApproach(strs)
+}
+
+private fun usingBestApproach(str: Array<String>) {
+
+    var prefix = str[0]
+
+    for (i in 1 until str.size) {
+
+        while (str[i].indexOf(prefix) != 0) {
+            prefix = prefix.substring(0, prefix.length - 1)
+            println(prefix)
+        }
+
+    }
+    println("using best approach $prefix")
+
 }
