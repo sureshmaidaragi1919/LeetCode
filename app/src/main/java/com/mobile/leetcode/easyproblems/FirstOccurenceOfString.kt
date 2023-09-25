@@ -3,10 +3,11 @@ package com.mobile.leetcode.easyproblems
 
 private fun main() {
 
-    val haystack = "mississippi"
-    val needle = "issip"
+    val haystack = "sa"
+    val needle = "a"
     // println(strStr(haystack, needle))
-    println(usingPointer(haystack, needle))
+    // println(usingPointer(haystack, needle))
+    println(usingOptimisedWay(haystack, needle))
 }
 
 private fun strStr(haystack: String, needle: String): Int {
@@ -36,7 +37,7 @@ private fun strStr(haystack: String, needle: String): Int {
     return result
 }
 
-private fun usingInbuilt(haystack: String, needle: String):Int {
+private fun usingInbuilt(haystack: String, needle: String): Int {
     return haystack.indexOf(needle)
 
 }
@@ -56,13 +57,13 @@ private fun usingOptimisedWay(haystack: String, needle: String): Int {
 
 private fun usingPointer(haystack: String, needle: String): Int {
 
-    if(haystack.equals(needle)) return 0
-    if(haystack.length<needle.length) return -1
-    var size = haystack.length - needle.length+1
-    if(needle.length==1) size=haystack.length
+    if (haystack.equals(needle)) return 0
+    if (haystack.length < needle.length) return -1
+    var size = haystack.length - needle.length + 1
+    if (needle.length == 1) size = haystack.length
 
-    for(i in 0 until size){
-        if(haystack[i]==needle[0]&&haystack.substring(i,i+needle.length)==needle){
+    for (i in 0 until size) {
+        if (haystack[i] == needle[0] && haystack.substring(i, i + needle.length) == needle) {
             return i
         }
     }
