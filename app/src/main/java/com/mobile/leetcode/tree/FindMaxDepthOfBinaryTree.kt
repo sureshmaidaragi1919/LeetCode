@@ -1,5 +1,7 @@
 package com.mobile.leetcode.tree
 
+import java.util.LinkedList
+
 
 /*
 *
@@ -29,6 +31,7 @@ private fun main() {
 
 
     println("Maximum depth is ${findMaxDepth(root)}")
+    println("Maximum depth is using level order traversal ${findMaxDepthLevelOrderTraversal(root)}")
 
 
 }
@@ -41,5 +44,28 @@ private fun findMaxDepth(root: Node?): Int {
     val rightCount = findMaxDepth(root.right)
 
     return (1 + leftCount.coerceAtLeast(rightCount))
+}
+
+private fun findMaxDepthLevelOrderTraversal(root: Node?): Int {
+
+
+    var depth = 0
+
+    if (root == null) return depth
+    val queue = LinkedList<Pair<Node?, Int>>()
+
+    queue.offer(Pair(root, 1))
+    while (queue.isNotEmpty()) {
+        val pair = queue.poll()
+        pair.first?.let {
+            depth = pair.second
+            queue.add(Pair(it.left, depth + 1))
+            queue.add(Pair(it.right, depth + 1))
+        }
+
+    }
+
+    return depth
+
 }
 
