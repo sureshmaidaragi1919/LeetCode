@@ -13,6 +13,7 @@ class Node(var data: Any) {
     var left: Node? = null
     var right: Node? = null
 }
+
 class TreeDs {
 
     var root: Node? = null
