@@ -21,7 +21,7 @@ private fun main() {
     var q = Node(1)
     q.left = Node(2)
     q.right = Node(4)
-    println(isSameTree(p, q))
+    println(areIdentical(p, q))
 }
 
 fun isSameTree(p: Node?, q: Node?): Boolean {
@@ -55,5 +55,16 @@ fun isSameTree(p: Node?, q: Node?): Boolean {
     }
 
     return true
+
+}
+
+//Using recursion
+
+private fun areIdentical(p: Node?, q: Node?): Boolean {
+
+    if (p == null && q==null) return true
+    if (p?.data != q?.data) return false
+
+    return areIdentical(p?.left, q?.left) && areIdentical(p?.right, q?.right)
 
 }
