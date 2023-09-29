@@ -6,7 +6,7 @@ package com.mobile.leetcode.tree
 *                4        5          8   9
 *                       6   7
 *
-* find common ancestor in above binary tree LCA (4, 7) == 2
+*
 *
 * */
 
