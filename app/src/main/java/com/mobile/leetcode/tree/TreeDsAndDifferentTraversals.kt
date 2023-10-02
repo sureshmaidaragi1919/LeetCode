@@ -50,7 +50,7 @@ class TreeDs {
 
             print(" ${node.data}")
             printPreOrder(node.left)
-            printInOrder(node.right)
+            printPreOrder(node.right)
 
         }
 
@@ -65,8 +65,8 @@ class TreeDs {
 
         private fun printPostOrder(node: Node?) {
             if (node == null) return
-            printPreOrder(node.left)
-            printPreOrder(node.right)
+            printPostOrder(node.left)
+            printPostOrder(node.right)
             print(" ${node.data}")
 
         }
