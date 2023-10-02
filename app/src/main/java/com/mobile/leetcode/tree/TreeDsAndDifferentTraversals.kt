@@ -57,9 +57,9 @@ class TreeDs {
         private fun printInOrder(node: Node?) {
             if (node == null) return
 
-            printPreOrder(node.left)
+            printInOrder(node.left)
             print(" ${node.data}")
-            printPreOrder(node.right)
+            printInOrder(node.right)
 
         }
 
