@@ -5,7 +5,9 @@ package com.mobile.leetcode.array
 *
 * There are n buildings in a line. You are given an integer array heights of size n that represents the heights of the buildings in the line.
 
-The ocean is to the right of the buildings. A building has an ocean view if the building can see the ocean without obstructions. Formally, a building has an ocean view if all the buildings to its right have a smaller height.
+The ocean is to the right of the buildings. A building has an ocean view if the building can see the ocean without obstructions.
+
+Formally, a building has an ocean view if all the buildings to its right have a smaller height.
 
 Return a list of indices (0-indexed) of buildings that have an ocean view, sorted in increasing order.
 
@@ -48,20 +50,16 @@ Explanation: Buildings cannot see the ocean if there are buildings of the same h
 
 private fun main() {
 
-    val arr = arrayOf(0, 8, 1, 7)
+    val arr = arrayOf(2,2,2,2)
+    usingReverseList(arr)
+}
+
+private fun usingReverseList(arr: Array<Int>) {
     var max = Int.MIN_VALUE
     for (i in arr.size - 1 downTo 0) {
-
-        if (i == 0) {
-            if (arr[i] >= max) {
-                println(i)
-            }
-            return
-        }
-
-        if (arr[i] >= max) {
-            max = Math.max(max, arr[i])
-            println(i)
+        if (arr[i] > max) {
+            max = arr[i]
+            println("found $i")
         }
 
     }
