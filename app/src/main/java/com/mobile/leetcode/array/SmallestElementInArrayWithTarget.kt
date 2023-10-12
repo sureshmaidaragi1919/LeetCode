@@ -15,7 +15,7 @@ package com.mobile.leetcode.array
 fun main() {
 
     val input = arrayOf(2, 3, 5, 14, 16, 18)
-    val target = 14
+    val target = 16
 
     println(findTarget(target, input, 0, input.lastIndex))
 }
@@ -23,18 +23,18 @@ fun main() {
 fun findTarget(target: Int, input: Array<Int>, start: Int, end: Int): Int {
 
     val mid = (start + end) / 2
+    if (mid == input.size - 1) return -1
 
     if (input[mid] == target) return mid
 
-    if (input[mid] >= target) {
+    if (input[mid] > target) {
 
-        findTarget(target, input, start, mid+1)
+        return findTarget(target, input, start, mid)
 
     } else {
 
-        findTarget(target, input, mid+1, end)
+        return findTarget(target, input, mid + 1, end)
     }
 
-    return -1
 }
 

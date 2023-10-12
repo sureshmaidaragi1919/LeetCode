@@ -17,14 +17,14 @@ fun main(){
 
         if(input[start_pointer]>input[next_pointer]){
             if(stack.isNotEmpty()&&stack.pop()==false) {
-                 println("out put ${input[next_pointer]}")
+                 println("output ${input[next_pointer]}")
 
              //   break
             }
             else stack.push(true)
         }else{
             if(stack.isNotEmpty()&&stack.pop()==true) {
-                println("out put ${input[start_pointer]}")
+                println("output ${input[start_pointer]}")
                // break
             }
             else stack.push(false)

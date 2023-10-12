@@ -3,7 +3,7 @@ package com.mobile.leetcode.array
 /*
 *
 * input [1,2,0,4,6,0,2]
-* output [1,2,4,5,2,0,0]
+* output [1,2,4,6,2,0,0]
 *
 * */
 
