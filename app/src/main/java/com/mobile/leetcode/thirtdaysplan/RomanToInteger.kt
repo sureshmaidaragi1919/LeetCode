@@ -51,7 +51,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
 
 private fun main() {
-    var s = "III"
+    var s = "LVIII"
     println(romanToInt(s))
 
 }
@@ -72,11 +72,11 @@ fun romanToInt(s: String): Int {
     var result = 0
 
     for (i in s.indices) {
-        var currentValue = map.getValue(s[i])
+        val currentValue = map.getValue(s[i])
 
         if (i + 1 != s.length) {
-            var nextValue = map.getValue(s[i + 1])
-            if (  nextValue>nextValue) {
+            val nextValue = map.getValue(s[i + 1])
+            if (nextValue>currentValue) {
                 result -= currentValue
             } else {
                 result += currentValue
