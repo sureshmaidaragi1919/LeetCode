@@ -21,15 +21,16 @@ Explanation: There is no common prefix among the input strings.
 * */
 
 private fun main() {
-    val strs = arrayOf("flow", "flow", "flight")
+    val strs = arrayOf("flower", "flow", "flight")
 
     strs.sort()
+    println(strs.toList())
     if (strs.isEmpty() || strs.size == 1) return
     val firstString = strs[0]
     val lastString = strs[1]
     var index = 0
 
-    while (index < firstString.length && index < lastString.length) {
+    while (index<firstString.length && index < lastString.length) {
 
         if (firstString[index] == lastString[index]) {
             index++
@@ -49,9 +50,14 @@ private fun usingBestApproach(str: Array<String>) {
 
     for (i in 1 until str.size) {
 
+        println("index of ${str[i].indexOf(prefix)}")
         while (str[i].indexOf(prefix) != 0) {
+            println("index of ${str[i].indexOf(prefix)}")
             prefix = prefix.substring(0, prefix.length - 1)
             println(prefix)
+        }
+        if (prefix.isEmpty()){
+            return
         }
 
     }

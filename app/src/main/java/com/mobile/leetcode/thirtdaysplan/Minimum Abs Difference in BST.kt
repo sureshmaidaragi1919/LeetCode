@@ -9,7 +9,7 @@ return the minimum absolute difference between the values of any two different n
 *Input: root = [4,2,6,1,3]
 Output: 1
 * */
-private class Node(var data: Any) {
+class Node(var data: Any) {
     var left: Node? = null
     var right: Node? = null
 
@@ -23,6 +23,26 @@ private fun main() {
     root.left?.right = Node(3)
 
     println(findMinDiff(root))
+
+
+
+}
+
+var resultSum = ""
+var output = 0
+private fun findSum(root: Node?, arr: Array<String>, index: Int): String {
+
+    if (root == null) return resultSum
+
+    resultSum += root.data
+    if (root.left == null && root.right == null) {
+        println(resultSum)
+        arr[index] = resultSum
+    }
+    findSum(root.left, arr, index + 1)
+    findSum(root.right, arr, index + 1)
+
+    return resultSum
 
 }
 

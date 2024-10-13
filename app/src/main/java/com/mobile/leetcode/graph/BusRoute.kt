@@ -24,10 +24,12 @@ Example 2:
 Input: routes = [[7,12],[4,5,15],[6],[15,19],[9,12,13]], source = 15, target = 12
 Output: -1
 
+Time complexity  O(n2)
+Space complexity O(n2)
+
 * */
 
 @RequiresApi(Build.VERSION_CODES.N)
-
 class Solution {
 
     fun numBusesToDestination(routes: Array<IntArray>, source: Int, target: Int): Int {
@@ -66,6 +68,6 @@ fun main() {
         target = 6
     )
 
-    println("No of buses needs to catch to reach target bustop is : $result")
+    println("No of buses needs to catch to reach target bus stop is : $result")
 }
 
