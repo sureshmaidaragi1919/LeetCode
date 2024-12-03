@@ -12,6 +12,7 @@ private fun main() {
 
     val input = intArrayOf(1, 2, 0, 4, 6, 0, 2)
     moveUsingOptimalWay(input)
+    //moveUsingBruteForceApproach(input)
 }
 
 
@@ -34,14 +35,14 @@ private fun moveUsingBruteForceApproach(intArray: IntArray) {
 }
 
 private fun moveUsingOptimalWay(nums: IntArray) {
-    var resIdx = 0
+    var resIdx = 0 //15032
     for ((i, n) in nums.withIndex()) {
         if (n != 0) {
             nums[resIdx] = n
             resIdx += 1
         }
     }
-    for (i in resIdx..nums.size - 1) {
+    for (i in resIdx..<nums.size) {
         nums[i] = 0
     }
 

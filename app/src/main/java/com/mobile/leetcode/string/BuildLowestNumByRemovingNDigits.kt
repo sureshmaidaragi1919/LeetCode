@@ -24,12 +24,35 @@ SC : O(N)
 * */
 private fun main() {
 
-    val str = ""
-    val n = 3
+    val str = "121198"
+    val n = 2
     removeKDigits(str, n)
 }
 
 fun removeKDigits(str: String, n: Int) {
+        val stack = ArrayDeque<Char>()
+        var removeCount = n
 
+        for (digit in str) {
+            while (stack.isNotEmpty() && stack.last() > digit && removeCount > 0) {
+                stack.removeLast()
+                removeCount--
+            }
+            stack.addLast(digit)
+        }
+
+        // Remove remaining digits from the end if necessary
+        while (removeCount > 0 && stack.isNotEmpty()) {
+            stack.removeLast()
+            removeCount--
+        }
+
+        // Build the result and remove leading zeros
+        val result = stack.joinToString("").trimStart('0')
+
+        // If the result is empty (e.g., all digits removed), return "0"
+        val finalResult= result.ifEmpty { "0" }
+
+    println("final result $finalResult")
 
 }
