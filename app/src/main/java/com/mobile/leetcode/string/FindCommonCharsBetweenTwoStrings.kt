@@ -33,15 +33,19 @@ Guaranteed constraints:
 [output] integer
 */
 
-
+/*
+Complexity
+Time Complexity: O(n + m), where n and m are the lengths of s1 and s2, as we iterate through both strings and the alphabet (26 characters).
+Space Complexity: O(1), since the frequency array size is fixed (26 for lowercase English letters).
+* */
 private fun main() {
     println(solution("aabcc", "adcaa"))
 }
 
 fun solution(s1: String, s2: String): Int {
 
-    var hashmapStr1 = mutableMapOf<Char, Int>()
-    var hashmapStr2 = mutableMapOf<Char, Int>()
+    val hashmapStr1 = mutableMapOf<Char, Int>()
+    val hashmapStr2 = mutableMapOf<Char, Int>()
 
 
 
@@ -68,6 +72,8 @@ fun solution(s1: String, s2: String): Int {
     for (item in hashmapStr1) {
 
         if (hashmapStr2.contains(item.key)) {
+            println("key= ${item.key} value = ${item.value}",)
+            println("result ${Math.min(item.value, hashmapStr2.getValue(item.key))}")
             result += Math.min(item.value, hashmapStr2.getValue(item.key))
         }
     }
